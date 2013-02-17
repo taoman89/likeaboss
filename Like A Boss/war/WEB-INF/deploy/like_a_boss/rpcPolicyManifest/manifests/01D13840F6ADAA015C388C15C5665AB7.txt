@@ -1,0 +1,2 @@
+serviceClass: boss.client.GreetingService
+path: 2B0AB9657F29001C1132E753ECBB9194.gwt.rpc
