@@ -61,7 +61,9 @@ $(document).ready(function() {
 		});
 		
 		$('#calendar').fullCalendar('changeView', 'agendaWeek');
-/*		
+
+		$('#dt_a').dataTable();
+		/*		
 	    function runEffect() {
 	      // get effect type from
 	      var selectedEffect = "slide";
