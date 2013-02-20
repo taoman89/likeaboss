@@ -1,18 +1,18 @@
 $(document).ready(function(){
-	$('#timetable').hide();
+	//$('#timetable').hide();
 	$('#showselection').hide();
 	
 	$('#hideselection').click(function(){
 		
 		$('#lovely-things-list').hide();
-		$('#timetable').show();
+		//$('#timetable').show();
 		$('#showselection').show();
 		
 	});
 	$('#showselection').click(function(){
 		
 		$('#lovely-things-list').show();
-		$('#timetable').hide();
+		//$('#timetable').hide();
 		$('#showselection').hide();
 		
 	});
