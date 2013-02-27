@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>LikeABoss</title>
+    
+        <!-- Bootstrap framework -->
+            <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+            <link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.min.css" />
+            <link rel="stylesheet" href="css/blue.css" />
+            <link rel="stylesheet" href="css/style.css" />
+            <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans" />
+			<script type="text/javascript" src="js/redips-drag-min.js"></script>
+			<script type="text/javascript" src="js/script.js"></script>
+        <!-- Favicon -->
+            <link rel="shortcut icon" href="favicon.ico" />
+		
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/ie.css" />
+            <script src="js/ie/html5.js"></script>
+			<script src="js/ie/respond.min.js"></script>
+        <![endif]-->
+		
+		<script>
+			//* hide all elements & show preloader
+			document.documentElement.className += 'js';
+		</script>
+    </head>
+    <body>
+		<div id="loading_layer" style="display:none"><img src="images/ajax_loader.gif" alt="" /></div>
+		<div id="maincontainer" class="clearfix">
+			<!-- header -->
+            <header>
+                <div class="navbar navbar-fixed-top">
+                    <div class="navbar-inner">
+                        <div class="container-fluid">
+                            <a class="brand" href="#"><i class="icon-home icon-white"></i> LikeABoss!</a>
+                            <ul class="nav user_menu pull-right">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">jervenneong.2010 <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+										<li><a href="#">Logout</a></li>                
+									</ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- main content -->
+            <div id="contentwrapper">
+                <div class="main_content">
+                	<h2 class="heading">Module Selector</h2>
+                	<div id="drag" class="span12">	
+				<!-- left container (table with subjects) -->
+				<div id="left"  class="span4">
+					<div id="module-list">
+                        <input class="search" placeholder="Search course code or name" />
+                        <ul class="filter">
+                            <li class="btn" id="filter-none">Show All</li>
+                            <li class="btn" id="filter-core">Core</li>
+                            <li class="btn" id="filter-boe">BOE</li>
+                            <li class="btn" id="filter-ge">GE</li>
+                            <li class="btn" id="filter-grs">GRS</li>
+                        </ul>
+					<table id="table1">
+						<colgroup>
+							<col width="190"/>
+						</colgroup>
+						<tbody class="list">
+							<tr><td class="dark"><div id="ar" class="drag clone ar"><span class="code">IDIS001</span>: <span class="name">Analytical Skills</span> <span class="category">core</span></div><input id="b_ar" class="ar" type="button" value="" onclick="report('ar')"/></td></tr>
+							
+							<tr><td class="dark"><div id="bi" class="drag clone bi"><span class="code">LGST001</span>: <span class="name">Ethics & Social Responsibility</span> <span class="category">core</span></div><input id="b_bi" class="bi" type="button" value="" onclick="report('bi')"/></td></tr>
+							
+							<tr><td class="dark"><div id="ch" class="drag clone ch"><span class="code">IS432</span>: <span class="name">Public Sector Systems</span> <span class="category">core</span></div><input id="b_ch" class="ch" type="button" value="" onclick="report('ch')"/></td></tr>
+							
+							<tr><td class="dark"><div id="en" class="drag clone en"><span class="code">IS305</span>: <span class="name">Enterprise Web Solutions</span> <span class="category">core</span></div><input id="b_en" class="en" type="button" value="" onclick="report('en')"/></td></tr>
+							
+							<tr><td class="dark"><div id="et" class="drag clone et"><span class="code">IS303</span>: <span class="name">Architectural Analysis</span> <span class="category">core</span></div><input id="b_et" class="et" type="button" value="" onclick="report('et')"/></td></tr>
+							
+							<tr><td class="dark"><div id="hi" class="drag clone hi"><span class="code">IS306</span>: <span class="name">Interaction Design & Prototyping</span> <span class="category">core</span></div><input id="b_hi" class="hi" type="button" value="" onclick="report('hi')"/></td></tr>
+							
+							<tr><td class="dark"><div id="it" class="drag clone it"><span class="code">STEC202</span>: <span class="name">Environmental Science</span> <span class="category">ge</span></h4></div><input id="b_it" class="it" type="button" value="" onclick="report('it')"/></td></tr>
+							
+							<tr><td class="dark"><div id="ma" class="drag clone ma"><span class="code">OPIM201</span>: <span class="name">Business Processes</span> <span class="category">boe</span></div><input id="b_ma" class="ma" type="button" value="" onclick="report('ma')"/></td></tr>
+							
+							<tr><td class="dark"><div id="ph" class="drag clone ph"><span class="code">MKTG224</span>: <span class="name">World Travel and Tourism</span> <span class="category">grs</span></div><input id="b_ph" class="ph" type="button" value="" onclick="report('ph')"/></td></tr>
+							
+							<tr><td class="trash" title="Trash">Drag here to remove</td></tr>
+						</tbody>
+					</table>
+ 					</div><!--end listjs-->
+				</div><!-- left container -->
+				
+				<!-- right container -->
+				<div id="right"  class="span9">
+					<table id="table2"  class="span9">
+						<colgroup>
+							<col width="50"/>
+							<col width="100"/>
+							<col width="100"/>
+							<col width="100"/>
+							<col width="100"/>
+							<col width="100"/>
+						</colgroup>
+						<tbody>
+							<tr>
+								<td class="mark blank">
+									
+								</td>
+								<td class="mark dark">Monday</td>
+								<td class="mark dark">Tuesday</td>
+								<td class="mark dark">Wednesday</td>
+								<td class="mark dark">Thursday</td>
+								<td class="mark dark">Friday</td>
+
+							</tr>
+							<tr>
+								<td class="mark dark">8:30am</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="mark dark">12pm</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="mark dark">3.30pm</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="mark dark">13:00</td>
+								<td class="mark lunch" colspan="5">Lunch</td>
+							</tr>
+							<tr>
+								<td class="mark dark">7pm</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+					<div id="message">Drag modules to the timetable</div>
+				</div><!-- right container -->
+			</div><!-- drag container -->
+			
+                </div>
+            </div>
+            
+            
+            <script src="js/jquery.min.js"></script>
+			<script src="bootstrap/js/bootstrap.min.js"></script>
+			<script src="js/list.js"></script>
+
+    <script type="text/javascript">
+
+        /*
+        * LOVELY THINGS
+        */
+
+        var options = {
+    	    valueNames: [ 'code', 'name', 'category' ]
+        };
+
+        var featureList = new List('module-list', options);
+
+        $('#filter-core').click(function() {
+            featureList.filter(function(item) {
+                if (item.values().category == "core") {
+                    return true;
+                } else {
+                    return false;
+                }
+            });
+            return false;
+        });
+
+        $('#filter-ge').click(function() {
+            featureList.filter(function(item) {
+                if (item.values().category == "ge") {
+                    return true;
+                } else {
+                    return false;
+                }
+            });
+            return false;
+        });
+        $('#filter-grs').click(function() {
+            featureList.filter(function(item) {
+                if (item.values().category == "grs") {
+                    return true;
+                } else {
+                    return false;
+                }
+            });
+            return false;
+        });
+
+        $('#filter-boe').click(function() {
+            featureList.filter(function(item) {
+                if (item.values().category == "boe") {
+                    return true;
+                } else {
+                    return false;
+                }
+            });
+            return false;
+        });
+        $('#filter-none').click(function() {
+            featureList.filter();
+            return false;
+        });
+    </script>
+	
+			<script>
+				$(document).ready(function() {
+					//* show all elements & remove preloader
+					setTimeout('$("html").removeClass("js")',1000);
+				});
+			</script>
+		
+		</div>
+	</body>
+</html>
