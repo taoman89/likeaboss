@@ -1,3 +1,58 @@
+//initial background colour
+var initialColour;
+var numberOfDays = 5; // sets the numbers of days in the timetable
+var slots;//slots that are first clicked by user
+
+
+//shows the slots that can be dragged into
+var showSlots = function (availSlots, backGroundColor,toggle){
+	var avail = availSlots.split(",");
+	//changes the css of desired slots into desired colours
+	for (var i = 0; i < avail.length; i ++){
+		var slotNumber = avail[i];
+		
+		var rowNumber = "row"+parseInt(slotNumber/numberOfDays); // rownumber of slot
+		var columnNumber =  "col" + (slotNumber - parseInt(slotNumber/numberOfDays) * numberOfDays ); // columnnumber of slot
+		//e.g a nummber 5 will yield row0 and col4
+		
+		//changes the background colour of avail timeslots
+		var selected = $('#'+rowNumber).children("."+columnNumber);
+		selected.css('background-color', backGroundColor);
+		//enables or disables the marked criteria
+		if(toggle){
+			selected.toggleClass('mark');
+		}
+		
+	}
+	
+	var loopedRows = 0;
+
+	while($('#row'+loopedRows).children(".mark").html()!= null){
+		
+		loopedRows++;
+	}
+	
+}
+
+$(document).ready(function() {
+	
+
+	$('.drag').mousedown(function(){
+		//gets the span that contains the available slots of which the modules can be in
+		initialColour = $('#row0').children(".col0").css('background-color');
+		slots = $(this).find('> .slots').html();		
+		showSlots(slots, '#3BB9FF',true);
+		
+	
+		
+	});
+	// if the person just click and never drag
+	$('.drag').mouseup(function(){
+
+		showSlots(slots, initialColour,false);
+	});
+	
+});
 /*jslint white: true, browser: true, undef: true, nomen: true, eqeqeq: true, plusplus: false, bitwise: true, regexp: true, strict: true, newcap: true, immed: true, maxerr: 14 */
 /*global window: false, REDIPS: true */
 
@@ -22,11 +77,12 @@ redipsInit = function () {
 	// REDIPS.drag settings
 	rd.dropMode = 'single';			// dragged elements can be placed only to the empty cells
 	rd.hover.colorTd = '#9BB3DA';	// set hover color
-	rd.clone.keyDiv = true;			// enable cloning DIV elements with pressed SHIFT key
+	rd.clone.keyDiv = false;			// enable cloning DIV elements with pressed SHIFT key
 	// prepare node list of DIV elements in table2
 	divNodeList = document.getElementById('table2').getElementsByTagName('div');
+	/** code not applicable 
 	// show / hide report buttons (needed for dynamic version - with index.php)
-	reportButton();
+	reportButton();**/
 	// element is dropped
 	rd.event.dropped = function () {
 		var	objOld = rd.objOld,					// original object
@@ -57,8 +113,8 @@ redipsInit = function () {
 		/** code not applicable 
 		reportButton();**/
 		
-		//returns the slots to the initial colour from juntao.js file
-		showSlots(slots, initialColour);
+		//returns the slots to the initial colour 
+		showSlots(slots, initialColour,true);
 	};
 
 	// after element is deleted from the timetable, print message
