@@ -19,20 +19,29 @@ var showSlots = function (availSlots, backGroundColor,toggle){
 		var selected = $('#'+rowNumber).children("."+columnNumber);
 		selected.css('background-color', backGroundColor);
 		//enables or disables the marked criteria
+		selected.attr('class').indexOf('mark');
 		if(toggle){
 			selected.toggleClass('mark');
-		}
-		
+		}		
 	}
-	
-	var loopedRows = 0;
+};
 
-	while($('#row'+loopedRows).children(".mark").html()!= null){
-		
-		loopedRows++;
+var lockAll = function(){
+	var table = document.getElementById("table2");
+	for (var i = 1, row; row = table.rows[i]; i++) {
+	   //iterate through rows
+	   //rows would be accessed using the "row" variable assigned in the for loop
+	   for (var j = 1, col; col = row.cells[j]; j++) {
+	     //iterate through columns
+	     //columns would be accessed using the "col" variable assigned in the for loop
+		 if(col.className.indexOf('mark')==-1){
+			 col.className = col.className + ' mark';
+		 }	   
+	   }
 	}
 	
-}
+};
+
 
 $(document).ready(function() {
 	
@@ -115,6 +124,7 @@ redipsInit = function () {
 		
 		//returns the slots to the initial colour 
 		showSlots(slots, initialColour,true);
+		lockAll();
 	};
 
 	// after element is deleted from the timetable, print message
