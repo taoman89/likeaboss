@@ -34,7 +34,9 @@ redipsInit = function () {
 			targetRow = targetCell.parentNode,	// target row
 			i, objNew;							// local variables
 		// if checkbox is checked and original element is of clone type then clone spread subjects to the week
-		if (document.getElementById('week').checked === true && objOld.className.indexOf('clone') > -1) {
+		
+		/** code not applicable **/
+		/*if (document.getElementById('week').checked === true && objOld.className.indexOf('clone') > -1) {
 			// loop through table cells
 			for (i = 0; i < targetRow.cells.length; i++) {
 				// skip cell if cell has some content (first column is not empty because it contains label)
@@ -46,20 +48,24 @@ redipsInit = function () {
 				// append to the table cell
 				targetRow.cells[i].appendChild(objNew);
 			}
-		}
+		}*/
 		// print message only if target and source table cell differ
 		if (rd.td.target !== rd.td.source) { 
 			printMessage('Content has been changed!');
 		}
 		// show / hide report buttons
-		reportButton();
+		/** code not applicable 
+		reportButton();**/
+		
+		//returns the slots to the initial colour from juntao.js file
+		showSlots(slots, initialColour);
 	};
 
 	// after element is deleted from the timetable, print message
 	rd.event.deleted = function () {
 		printMessage('Content has been deleted!');
 		// show / hide report buttons
-		reportButton();
+		//reportButton();
 	};
 	
 	// if any element is clicked, then make all subjects in timetable visible
