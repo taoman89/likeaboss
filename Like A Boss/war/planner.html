@@ -65,9 +65,11 @@
                 	<h2 class="heading">Module Selector</h2>
                 	<div id="drag" class="span12">	
 				<!-- left container (table with subjects) -->
-				<div id="left"  class="span4">
+				<div id="left"  class="span2">
 					<div id="module-list">
-                        <input class="search" placeholder="Search course code or name" />
+						<div class="formSep">
+                        	<input type="text" class="search" placeholder="Search course code or name" />
+                   		 </div>
                         <ul class="filter">
                             <li class="btn" id="filter-none">Show All</li>
                             <li class="btn" id="filter-core">Core</li>
@@ -81,23 +83,23 @@
 						</colgroup>
 						<tbody class="list">
 						<!-- max number is 39 min is 0 -->
-							<tr><td class="dark"><div id="ar" class="drag ar"><span style="visibility:hidden;display:none" class="slots">0,15,27,20</span><span class="code">IDIS001</span>: <span class="name">Analytical Skills</span> <span class="category">core</span></div><input id="b_ar" class="ar" type="button" value="" onclick="report('ar')"/></td></tr>
+							<tr><td class="dark"><div id="ar" class="drag ar"><span style="visibility:hidden;display:none" class="slots">0,15,27,20</span><span class="code">IDIS001</span>: <span class="name">Analytical Skills</span> <span class="category">core</span></div></td></tr>
 							
-							<tr><td class="dark"><div id="bi" class="drag bi"><span style="visibility:hidden;display:none" class="slots">18,7,36,39</span><span class="code">LGST001</span>: <span class="name">Ethics & Social Responsibility</span> <span class="category">core</span></div><input id="b_bi" class="bi" type="button" value="" onclick="report('bi')"/></td></tr>
+							<tr><td class="dark"><div id="bi" class="drag bi"><span style="visibility:hidden;display:none" class="slots">18,7,36,39</span><span class="code">LGST001</span>: <span class="name">Ethics & Social Responsibility</span> <span class="category">core</span></div></td></tr>
 							
-							<tr><td class="dark"><div id="ch" class="drag ch"><span style="visibility:hidden;display:none" class="slots">3,20,27,25</span><span class="code">IS432</span>: <span class="name">Public Sector Systems</span> <span class="category">core</span></div><input id="b_ch" class="ch" type="button" value="" onclick="report('ch')"/></td></tr>
+							<tr><td class="dark"><div id="ch" class="drag ch"><span style="visibility:hidden;display:none" class="slots">3,20,27,25</span><span class="code">IS432</span>: <span class="name">Public Sector Systems</span> <span class="category">core</span></div></td></tr>
 							
-							<tr><td class="dark"><div id="en" class="drag en"><span style="visibility:hidden;display:none" class="slots">6,7,8,33</span><span class="code">IS305</span>: <span class="name">Enterprise Web Solutions</span> <span class="category">core</span></div><input id="b_en" class="en" type="button" value="" onclick="report('en')"/></td></tr>
+							<tr><td class="dark"><div id="en" class="drag en"><span style="visibility:hidden;display:none" class="slots">6,7,8,33</span><span class="code">IS305</span>: <span class="name">Enterprise Web Solutions</span> <span class="category">core</span></div></td></tr>
 							
-							<tr><td class="dark"><div id="et" class="drag et"><span style="visibility:hidden;display:none" class="slots">8,18,28,33</span><span class="code">IS303</span>: <span class="name">Architectural Analysis</span> <span class="category">core</span></div><input id="b_et" class="et" type="button" value="" onclick="report('et')"/></td></tr>
+							<tr><td class="dark"><div id="et" class="drag et"><span style="visibility:hidden;display:none" class="slots">8,18,28,33</span><span class="code">IS303</span>: <span class="name">Architectural Analysis</span> <span class="category">core</span></div></td></tr>
 							
-							<tr><td class="dark"><div id="hi" class="drag hi"><span style="visibility:hidden;display:none" class="slots">7,15,34,24</span><span class="code">IS306</span>: <span class="name">Interaction Design & Prototyping</span> <span class="category">core</span></div><input id="b_hi" class="hi" type="button" value="" onclick="report('hi')"/></td></tr>
+							<tr><td class="dark"><div id="hi" class="drag hi"><span style="visibility:hidden;display:none" class="slots">7,15,34,24</span><span class="code">IS306</span>: <span class="name">Interaction Design & Prototyping</span> <span class="category">core</span></div></td></tr>
 							
-							<tr><td class="dark"><div id="it" class="drag it"><span style="visibility:hidden;display:none" class="slots">0,1,27,21</span><span class="code">STEC202</span>: <span class="name">Environmental Science</span> <span class="category">ge</span></h4></div><input id="b_it" class="it" type="button" value="" onclick="report('it')"/></td></tr>
+							<tr><td class="dark"><div id="it" class="drag it"><span style="visibility:hidden;display:none" class="slots">0,1,27,21</span><span class="code">STEC202</span>: <span class="name">Environmental Science</span> <span class="category">ge</span></h4></div></tr>
 							
-							<tr><td class="dark"><div id="ma" class="drag ma"><span style="visibility:hidden;display:none" class="slots">3,22,27,25</span><span class="code">OPIM201</span>: <span class="name">Business Processes</span> <span class="category">boe</span></div><input id="b_ma" class="ma" type="button" value="" onclick="report('ma')"/></td></tr>
+							<tr><td class="dark"><div id="ma" class="drag ma"><span style="visibility:hidden;display:none" class="slots">3,22,27,25</span><span class="code">OPIM201</span>: <span class="name">Business Processes</span> <span class="category">boe</span></div></td></tr>
 							
-							<tr><td class="dark"><div id="ph" class="drag ph"><span style="visibility:hidden;display:none" class="slots">3,22,27,25</span><span class="code">MKTG224</span>: <span class="name">World Travel and Tourism</span> <span class="category">grs</span></div><input id="b_ph" class="ph" type="button" value="" onclick="report('ph')"/></td></tr>
+							<tr><td class="dark"><div id="ph" class="drag ph"><span style="visibility:hidden;display:none" class="slots">3,22,27,25</span><span class="code">MKTG224</span>: <span class="name">World Travel and Tourism</span> <span class="category">grs</span></div></tr>
 							
 							<tr><td class="trash" title="Trash">Drag here to remove</td></tr>
 						</tbody>
@@ -106,8 +108,8 @@
 				</div><!-- left container -->
 				
 				<!-- right container -->
-				<div id="right"  class="span9">
-					<table id="table2"  class="span9">
+				<div id="right"  class="span8">
+					<table id="table2"  class="span8">
 						<colgroup>
 							<col width="50"/>
 							<col width="100"/>
@@ -194,8 +196,22 @@
 							</tr>
 						</tbody>
 					</table>
-					<div id="message">Drag modules to the timetable</div>
 				</div><!-- right container -->
+				<div class="exam span2">
+					<h4 class="heading">Examination Dates</h4>
+					<div class="exammod drag">
+						<p align="center">IS303 - G4</p>
+						Architectural Analysis<br/>
+						Date: 15 Apr 2013<br/>
+						Time: 1pm-3pm
+					</div>
+					<div class="exammod drag">
+						<p align="center">IS306 - G1</p>
+						Interaction Design & Prototyping<br/>
+						Date: 20 Apr 2013<br/>
+						Time: 3pm-5pm
+					</div>
+				</div>
 			</div><!-- drag container -->
 			
                 </div>

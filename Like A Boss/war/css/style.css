@@ -8,20 +8,46 @@ html {overflow-y: scroll}
 		padding:0;
 	}
 	
-	p {
-		margin-top: 10px;
-		margin-bottom: 10px;
+	
+	.btn{
+		margin-bottom: 5px !important;
+	}
+	/*drag and drop css*/
+	#right {
+	margin-top: 5px;
+	
 	}
 	
-	/*drag and drop css*/
+	.search{
+		margin-top: 5px !important;
+	}
+	.exam.span2 .heading{
+		text-align: center;
+		padding-top: 10px;
+	}
+	
+	.exammod.drag p{
+		margin: 0px;
+	}
+	.exammod.drag {
+	width: 135px;
+	height: auto;
+	font-weight: bold;
+	background-color: white;
+	padding: 8px;
+	}
+	
+	.exam.span2{
+		background-color: #e0e0e0;
+		min-height: 494px;
+		height: auto;
+		margin-top: 6px;
+	}
+	
 	.category {
 	display: none;
 	}
 	
-	
-	#right{
-		margin-left: 0px;
-	}
 	.list {
 	 list-style: none;
 	}
@@ -104,6 +130,9 @@ html {overflow-y: scroll}
 				div#drag #table1 div {
 					margin-left: 5px;
 					float: left;
+					width: 135px;
+					min-height: 40px;
+					text-align: center;
 				}
 				/* define styles for buttons */
 				div#drag #table1 input {
