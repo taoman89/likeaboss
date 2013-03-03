@@ -40,7 +40,34 @@ var unlockSlots = function(availSlots, backGroundColor){
 			 selected.toggleClass('mark');
 		 }
 	}
-}
+};
+/** WIP
+var showSlotsFullMod = function (availSlots, backGroundColor){
+	var avail = availSlots.split(",");
+	//changes the css of desired slots into desired colours
+	for (var i = 0; i < avail.length; i ++){
+		var slotNumber = avail[i];
+		
+		var rowNumber = "row"+parseInt(slotNumber/numberOfDays); // rownumber of slot
+		var columnNumber =  "col" + (slotNumber - parseInt(slotNumber/numberOfDays) * numberOfDays ); // columnnumber of slot
+		//e.g a nummber 5 will yield row0 and col4
+		
+		//changes the background colour of avail timeslots
+		var selected = $('#'+rowNumber).children("."+columnNumber);
+		
+		var hiddenTD = $('#'+"row"+(parseInt(slotNumber/numberOfDays)+1)).children("."+columnNumber);
+		hiddenTD.remove();
+		alert(hiddenTD.html());
+		
+		selected.attr('rowspan',2);
+		
+		
+		selected.css('background-color', backGroundColor);
+		
+	}
+	unlockSlots(availSlots, backGroundColor);
+};
+**/
 // function that locks all of the timetable cells
 var lockAll = function(){
 	var table = document.getElementById("table2");
@@ -110,8 +137,14 @@ $(document).ready(function() {
 	
 	$('.drag').mousedown(function(){
 		
-		slots = $(this).find('> .slots').html();		
-		showSlots(slots, '#3BB9FF');
+		slots = $(this).find('> .slots').html();	
+		//if($(this).find('> .full').html()==null){
+			showSlots(slots, '#3BB9FF');
+		//}
+		/** WIPelse{
+			showSlotsFullMod(slots, '#3BB9FF');
+		}**/
+		
 		
 		$(".trash").css('background-color', '#FF0000');
 		
@@ -157,9 +190,12 @@ $(document).ready(function() {
 			$('#'+ clonedID).mousedown(function(){
 				//gets the span that contains the available slots of which the modules can be in
 				
-				slots = $(this).find('> .slots').html();		
-				showSlots(slots, '#3BB9FF');
+				slots = $(this).find('> .slots').html();
 				
+				//WIPif($(this).find('> .full').html()==null){
+				
+					showSlots(slots, '#3BB9FF');
+				//}
 				
 				$(".trash").css('background-color', '#FF0000');
 				
