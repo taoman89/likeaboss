@@ -6,7 +6,6 @@
         <title>LikeABoss</title>
     	<!-- JQuery -->	
 			<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-			<script type="text/javascript" src="js/juntao.js"></script>
 			
         <!-- Bootstrap framework -->
             <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
@@ -17,7 +16,10 @@
 			<script type="text/javascript" src="js/redips-drag-min.js"></script>
 			<script type="text/javascript" src="js/script.js"></script>
 			
-		 
+		<!-- Hover Effect -->	
+		 	<link rel="stylesheet" href="css/hover.css" />
+		 	<script type="text/javascript" src="js/hover.js"></script>
+		 	
         <!-- Favicon --
             <link rel="shortcut icon" href="favicon.ico" />
 		
@@ -33,6 +35,7 @@
 		</script>
     </head>
     <body>
+    
     <div id="main">
     <div class="statusbar">
         <p class="position"></p>
@@ -106,6 +109,9 @@
 					</table>
  					</div><!--end listjs-->
 				</div><!-- left container -->
+				
+				
+				
 				
 				<!-- right container -->
 				<div id="right"  class="span8">
@@ -199,17 +205,59 @@
 				</div><!-- right container -->
 				<div class="exam span2">
 					<h4 class="heading">Examination Dates</h4>
-					<div class="exammod drag">
-						<p align="center">IS303 - G4</p>
-						Architectural Analysis<br/>
+					<div id = "IDIS001" class="exammod drag hidden" >
+						<p align="center">IDIS001</p>
+						Analytical Skills<br/>
 						Date: 15 Apr 2013<br/>
 						Time: 1pm-3pm
 					</div>
-					<div class="exammod drag">
-						<p align="center">IS306 - G1</p>
-						Interaction Design & Prototyping<br/>
+					<div id= "LGST001" class="exammod drag hidden" >
+						<p align="center">LGST001</p>
+						Ethics & Social Responsibility<br/>
 						Date: 20 Apr 2013<br/>
 						Time: 3pm-5pm
+					</div>
+					<div id = "IS432" class="exammod drag hidden" >
+						<p align="center">IS432</p>
+						Public Sector Systems<br/>
+						Date: 16 Apr 2013<br/>
+						Time: 1pm-3pm
+					</div>
+					<div id="IS305" class="exammod drag hidden">
+						<p align="center">IS305</p>
+						Enterprise Web Solutions<br/>
+						Date: 17 Apr 2013<br/>
+						Time: 1pm-3pm
+					</div>
+					<div id ="IS303" class="exammod drag hidden" >
+						<p align="center">IS303</p>
+						Architectural Analysis<br/>
+						Date: 18 Apr 2013<br/>
+						Time: 1pm-3pm
+					</div>
+					<div id = "IS306" class="exammod drag hidden" >
+						<p align="center">IS306</p>
+						Interaction Design & Prototyping<br/>
+						Date: 19 Apr 2013<br/>
+						Time: 1pm-3pm
+					</div>
+					<div id ="STEC202" class="exammod drag hidden" >
+						<p align="center">STEC202</p>
+						Environmental Science<br/>
+						Date: 21 Apr 2013<br/>
+						Time: 1pm-3pm
+					</div>
+					<div id = "OPIM201" class="exammod drag hidden" >
+						<p align="center">OPIM201</p>
+						Business Processes<br/>
+						Date: 22 Apr 2013<br/>
+						Time: 1pm-3pm
+					</div>
+					<div id = "MKTG224" class="exammod drag hidden" >
+						<p align="center">MKTG224</p>
+						World Travel and Tourism<br/>
+						Date: 23 Apr 2013<br/>
+						Time: 1pm-3pm
 					</div>
 				</div>
 			</div><!-- drag container -->
@@ -218,7 +266,6 @@
             </div>
             
             
-            <script src="js/jquery.min.js"></script>
 			<script src="bootstrap/js/bootstrap.min.js"></script>
 			<script src="js/list.js"></script>
 
