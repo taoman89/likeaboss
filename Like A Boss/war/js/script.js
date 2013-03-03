@@ -63,9 +63,6 @@ var showExamTimeTable = function(){
 	
 	//hide all exam timetable
 	$('.exammod').each(function(){
-	    //if statement here 
-	    // use $(this) to reference the current div in the loop
-	    //you can try something like...
 
 	    if(!$(this).hasClass('hidden')){
 	    	$(this).toggleClass('hidden');
@@ -98,6 +95,8 @@ var showExamTimeTable = function(){
 			 
 			 if($('#'+examID).hasClass('hidden')){
 				 $('#'+examID).toggleClass('hidden');
+				 
+				 $('#'+examID).animate({backgroundColor: initialColour}, 'slow');
 			 }
 		 }
 	   }
@@ -119,8 +118,7 @@ $(document).ready(function() {
 	});
 	// if the person just click and never drag
 	$('.drag').mouseup(function(){
-
-		showSlots(slots, initialColour,false);
+		showSlots(slots, initialColour);
 		$(".trash").css('background-color', '#6386BD');
 		lockAll();
 	});
@@ -187,8 +185,8 @@ $(document).ready(function() {
 		rd.event.clonedDropped = function (){
 			var originalID = rd.objOld.id;
 			//hides the item that is dragged to the timetable
-			if(!$("."+unhideClassName).hasClass('hidden')){
-				$("."+unhideClassName).toggleClass('hidden');
+			if(!$("."+originalID+'td').hasClass('hidden')){
+				$("."+originalID+'td').toggleClass('hidden');
 			}
 		}
 		
@@ -208,8 +206,14 @@ $(document).ready(function() {
 			}
 		};
 		
-		
+		rd.event.notCloned = function(){
+			showSlots(slots, initialColour);
+			lockAll;
+			$(".trash").css('background-color', '#6386BD');
+		}
 	};
+	
+	
 	
 	// function show all subjects in timetable
 	showAll = function () {
