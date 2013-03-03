@@ -1,2 +1,3 @@
 # Module like_a_boss
 # RPC service class, partial path of RPC policy file
+boss.client.GreetingService, 2B0AB9657F29001C1132E753ECBB9194.gwt.rpc

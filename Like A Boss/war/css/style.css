@@ -933,6 +933,7 @@ html {overflow-y: scroll}
 			.sidebar_right .sidebar {right:50%;margin-left:0;margin-right:-840px}
 			.sidebar_right .sidebar_switch {left:auto;right:50%;margin-left:0;margin-right:-836px}
 		}
+		
 		.hidden{
-			style="display:none"
+			 style="display:none"
 		}
