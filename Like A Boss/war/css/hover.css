@@ -1,18 +1,27 @@
-#overlay_form{
-	position: absolute;
-	border: 5px solid gray;
-	padding: 10px;
-	background: white;
-	width: 270px;
-	height: 190px;
+
+ul#nav li {
+    
+    display: block;
+    
+    background: #000;
+    
+    color: #FFF;
+    text-align: center;
+    line-height: 30px;
+    white-space: nowrap;
 }
-#pop{
-	display: block;
-	border: 1px solid gray;
-	width: 65px;
-	text-align: center;
-	padding: 6px;
-	border-radius: 5px;
-	text-decoration: none;
-	margin: 0 auto;
+ul#nav li:hover {
+    background: #FFF;
+    
+    color: #000;
+}
+ul#nav > li ul {
+    display: none;
+    position: absolute;
+}
+.and:hover >ul li ul {
+    display: block;
+}
+ul#nav > li ul li {
+    display: block;
 }
