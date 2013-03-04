@@ -88,6 +88,7 @@
 						<tbody class="list">
 							
 						<!-- max number is 39 min is 0 for slots as of now -->
+							
 							<tr><td class="dark artd"><div id="ar" class="drag and clone ar"><span style="visibility:hidden;display:none" class="slots half">0,15,27,21</span><span class="code">IDIS001</span>: <span class = "section"></span> <span class="name">Analytical Skills</span> <span class="category">core</span>
 							
 							<ul id = "nav">
@@ -110,7 +111,19 @@
     </ul>
 							</div></td></tr>
 							
-							<tr><td class="dark bitd"><div id="bi" class="drag and clone bi"><span style="visibility:hidden;display:none" class="slots full">13,2,20,21</span><span class="code">LGST001</span>: <span class = "section"></span> <span class="name">Ethics & Social Responsibility</span> <span class="category">core</span></div></td></tr>
+							<tr><td class="dark bitd"><a data-toggle="modal" data-backdrop="static" href="#myModal" ><div id="bi" class="drag and clone bi"><span style="visibility:hidden;display:none" class="slots full">13,2,20,21</span><span class="code">LGST001</span>: <span class = "section"></span> <span class="name">Ethics & Social Responsibility</span> <span class="category">core</span></div></a></td></tr>
+							<div class="modal hide fade" id="myModal">
+								<div class="modal-header">
+									<button class="close" data-dismiss="modal">×</button>
+									<h3>Modal header</h3>
+								</div>
+								<div class="modal-body">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non elit tellus, eleifend varius erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In bibendum laoreet ante sodales elementum. Nullam varius interdum est, at ornare quam aliquam eu. Nulla ultricies commodo leo sit amet vulputate.
+								</div>
+								<div class="modal-footer">
+									<a href="#" class="btn" data-dismiss="modal">Close</a>
+								</div>
+							</div>
 							
 							<tr><td class="dark chtd"><div id="ch" class="drag and clone ch"><span style="visibility:hidden;display:none" class="slots full">3,20,22,23</span><span class="code">IS432</span>: <span class = "section"></span> <span class="name">Public Sector Systems</span> <span class="category">core</span></div></td></tr>
 							
@@ -160,11 +173,11 @@
 							</tr>
 							<tr id = "row0">
 								<td class="mark dark tablehead">8300</td>
-								<td class = "mark col0"></td>
-								<td class = "mark col1"></td>
-								<td class = "mark col2"></td>
-								<td class = "mark col3"></td>
-								<td class = "mark col4"></td>
+								<td class = "mark col0" style="background-color: rgba(0, 0, 0, 0); width:170px; height:61px;"></td>
+								<td class = "mark col1" style="background-color: rgba(0, 0, 0, 0); width:170px; height:61px;"></td>
+								<td class = "mark col2" style="background-color: rgba(0, 0, 0, 0); width:170px; height:61px;"></td>
+								<td class = "mark col3" style="background-color: rgba(0, 0, 0, 0); width:170px; height:61px;"></td>
+								<td class = "mark col4" style="background-color: rgba(0, 0, 0, 0); width:170px; height:61px;"></td>
 							</tr>
 							<tr id = "row1">
 								<td class="mark dark tablehead">1030</td>
@@ -226,61 +239,51 @@
 						</tbody>
 					</table>
 				</div><!-- right container -->
-				<div class="exam span2">
-					<h4 class="heading">Examination Dates</h4>
-					<div id = "IDIS001" class="exammod drag hidden" >
-						<p align="center">IDIS001</p>
-						Analytical Skills<br/>
-						Date: 15 Apr 2013<br/>
-						Time: 1pm-3pm
+				<div class="right-wrapper span2">
+					<div class="num">
+						<blockquote>
+							<p>3</p>
+							<small>CU(s) Selected</small>
+						</blockquote>
 					</div>
-					<div id= "LGST001" class="exammod drag hidden" >
-						<p align="center">LGST001</p>
-						Ethics & Social Responsibility<br/>
-						Date: 15 Apr 2013<br/>
-						Time: 3pm-5pm
-					</div>
-					<div id = "IS432" class="exammod drag hidden" >
-						<p align="center">IS432</p>
-						Public Sector Systems<br/>
-						Date: 16 Apr 2013<br/>
-						Time: 1pm-3pm
-					</div>
-					<div id="IS305" class="exammod drag hidden">
-						<p align="center">IS305</p>
-						Enterprise Web Solutions<br/>
-						Date: 17 Apr 2013<br/>
-						Time: 1pm-3pm
-					</div>
-					<div id ="IS303" class="exammod drag hidden" >
-						<p align="center">IS303</p>
-						Architectural Analysis<br/>
-						Date: 18 Apr 2013<br/>
-						Time: 1pm-3pm
-					</div>
-					<div id = "IS306" class="exammod drag hidden" >
-						<p align="center">IS306</p>
-						Interaction Design & Prototyping<br/>
-						Date: 19 Apr 2013<br/>
-						Time: 1pm-3pm
-					</div>
-					<div id ="STEC202" class="exammod drag hidden" >
-						<p align="center">STEC202</p>
-						Environmental Science<br/>
-						Date: 21 Apr 2013<br/>
-						Time: 1pm-3pm
-					</div>
-					<div id = "OPIM201" class="exammod drag hidden" >
-						<p align="center">OPIM201</p>
-						Business Processes<br/>
-						Date: 22 Apr 2013<br/>
-						Time: 1pm-3pm
-					</div>
-					<div id = "MKTG224" class="exammod drag hidden" >
-						<p align="center">MKTG224</p>
-						World Travel and Tourism<br/>
-						Date: 23 Apr 2013<br/>
-						Time: 1pm-3pm
+					<div class="exam span2">
+						<h4 class="heading">Examination Dates</h4>
+						<div id = "IDIS001" class="exammod drag hidden" >
+							<p align="center">Analytical Skills</p>
+							15 Apr 2013: 1pm-3pm
+						</div>
+						<div id= "LGST001" class="exammod drag hidden" >
+							<p align="center">Ethics & Social Responsibility</p>
+							15 Apr 2013: 3pm-5pm
+						</div>
+						<div id = "IS432" class="exammod drag hidden" >
+							<p align="center">Public Sector Systems</p>
+							16 Apr 2013: 1pm-3pm
+						</div>
+						<div id="IS305" class="exammod drag hidden">
+							<p align="center">Enterprise Web Solutions</p>
+							17 Apr 2013: 1pm-3pm
+						</div>
+						<div id ="IS303" class="exammod drag hidden" >
+							<p align="center">Architectural Analysis</p>
+							18 Apr 2013: 1pm-3pm
+						</div>
+						<div id = "IS306" class="exammod drag hidden" >
+							<p align="center">Interaction Design & Prototyping</p>
+							19 Apr 2013: 1pm-3pm
+						</div>
+						<div id ="STEC202" class="exammod drag hidden" >
+							<p align="center">Environmental Science</p>
+							21 Apr 2013: 1pm-3pm
+						</div>
+						<div id = "OPIM201" class="exammod drag hidden" >
+							<p align="center">Business Processes</p>
+							22 Apr 2013: 1pm-3pm
+						</div>
+						<div id = "MKTG224" class="exammod drag hidden" >
+							<p align="center">World Travel and Tourism</p>
+							23 Apr 2013: 1pm-3pm
+						</div>
 					</div>
 				</div>
 			</div><!-- drag container -->
