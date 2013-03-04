@@ -67,7 +67,7 @@ var showSlotsFullMod = function (availSlots, backGroundColor){
 	unlockSlots(availSlots, backGroundColor);
 };
 
-// function that locks all of the timetable cells
+// function that locks all of the timetable cells / also does checks to ensure that half mods and full mods are in the right places of the application
 var lockAll = function(){
 	var table = document.getElementById("table2");
 	for (var i = 1, row; row = table.rows[i]; i++) {
@@ -81,15 +81,16 @@ var lockAll = function(){
 		 }
 		 //changes the background to initial colour
 		 col.style.backgroundColor = initialColour;
-		 
+		 // if the module is a full module and it is in a half mod slot
 		 if(col.innerHTML.indexOf('full"') >= 0 ){
 			 col.rowSpan = 2;
 			 var hiddenTD = $('#'+"row"+(i)).children(".col"+(j-1));
 			 hiddenTD.remove();
 		 }
 		 
+
 		 //recitify the rowspan to 1 after the element is dropped innerHTML is to check if there is things inside the td
-		 if(col.rowSpan ==2 && col.innerHTML.length == 0 ){
+		 if(col.rowSpan ==2 &&( col.innerHTML.length == 0 || col.innerHTML.indexOf('half"') >= 0 )){
 		
 			 col.rowSpan = 1;
 			 
@@ -294,7 +295,7 @@ $(document).ready(function() {
 		
 		rd.event.notCloned = function(){
 			showSlots(slots, initialColour);
-			lockAll;
+			lockAll();
 			$(".trash").css('background-color', '#6386BD');
 		}
 	};
