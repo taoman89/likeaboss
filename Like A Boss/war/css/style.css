@@ -7,6 +7,48 @@ html {overflow-y: scroll}
 		margin:0;
 		padding:0;
 	}
+	.right-wrapper.span2 {
+	float: left;
+	margin-left: 0px;
+	}
+	.exammod.item {
+	width: 135px;
+	height: auto;
+	background-color: white;
+	padding: 8px;
+	cursor: auto !important;
+	font-size: 13px !important;
+	}
+	.item {
+	position: relative;
+	margin: 2px auto;
+	z-index: 10;
+	text-align: left;
+	padding: 5px;
+	font-size: 12px;
+	-moz-border-radius: 10px !important;
+	-webkit-border-radius: 10px !important;
+	border-radius: 10px;
+	height: auto;
+	width: 135px;
+	min-height: 40px;
+	text-align: center;
+	}
+	.item {
+	margin: auto;
+	z-index: 10;
+	color: #222;
+	text-align: center;
+	font-size: 10pt;
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+	width: 87px;
+	height: 20px;
+	line-height: 20px;
+	border: 1px solid #555;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	}
 	
 	blockquote small:before {
 	content: '' !important;
@@ -25,9 +67,12 @@ html {overflow-y: scroll}
 	/*drag and drop css*/
 	#right {
 	margin-top: 5px;
-	
+	float: left;
+	width: auto;
 	}
-	
+	#left {
+	float: left;
+	}
 	.search{
 		margin-top: 5px !important;
 	}
@@ -37,19 +82,13 @@ html {overflow-y: scroll}
 		margin-bottom: 0px;
 		padding-top: 19px;
 	}
+	.exam.span2 h5{
+		padding-top: 0px !important;
+	}
 	
-	.exammod.drag p{
+	.exammod.item p{
 		margin: 0px;
 	}
-	.exammod.drag {
-	width: 135px;
-	height: auto;
-	font-weight: bold;
-	background-color: white;
-	padding: 8px;
-	cursor: auto !important;
-	}
-	
 	
 	.exam.span2{
 		background-color: #e0e0e0;

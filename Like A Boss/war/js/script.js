@@ -319,10 +319,6 @@ $(document).ready(function() {
 			//this only works if the ID of the original element is of 2 letters
 			var unhideClassName = rd.obj.id.substring(0,2)+"td";
 			
-<<<<<<< HEAD
-			
-=======
->>>>>>> branch 'master' of https://github.com/taoman89/likeaboss.git
 			//shows the td back
 			if($("."+unhideClassName).hasClass('hidden')){
 				$("."+unhideClassName).toggleClass('hidden');
