@@ -1,5 +1,5 @@
 #overlay_form{
-	position: relative;
+	position: absolute;
 	border: 5px solid gray;
 	padding: 10px;
 	background: white;
