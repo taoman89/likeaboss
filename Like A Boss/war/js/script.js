@@ -181,6 +181,36 @@ var showExamTimeTable = function(){
 	
 };
 
+var insertSection = function(){
+	var table = document.getElementById("table2");
+	
+	//adding exam to exam table
+	for (var i = 1, row; row = table.rows[i]; i++) {
+	   //iterate through rows
+	   //rows would be accessed using the "row" variable assigned in the for loop
+	   for (var j = 1, col; col = row.cells[j]; j++) {
+		   //iterate through columns
+		   //returns the slots of the the object
+		   if(col.innerHTML!= null && col.innerHTML!= ''){
+			   var slots = col.firstChild.firstChild.innerHTML.split(",");
+			   
+			   var curLocation = (i-1) * 5 + j -1;
+			   var section = 'G';
+			   for(var k = 0; k <slots.length; k ++){
+				   if(curLocation == slots[k]){
+					   section+= (k+1);
+					   //gets the span with the class name of section
+					   var sectionSpan = col.firstChild.firstChild.nextSibling.nextSibling.nextSibling;
+					   //alert(sectionSpan.innerHTML);
+					   sectionSpan.innerHTML = section;
+				   }
+				   
+			   }
+		   
+		   }
+	   }
+	}
+}
 
 $(document).ready(function() {
 	initialColour = $('#row0').children(".col0").css('background-color');
@@ -264,6 +294,7 @@ $(document).ready(function() {
 			showSlots(slots, initialColour);
 			$(".trash").css('background-color', '#6386BD');
 			lockAll();
+			insertSection();
 			showExamTimeTable();
 
 		};
