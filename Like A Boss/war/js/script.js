@@ -287,7 +287,7 @@ $(document).ready(function() {
 			//this only works if the ID of the original element is of 2 letters
 			var unhideClassName = rd.objOld.id.substring(0,2)+"td";
 			
-			alert(unhideClassName);
+			
 			//shows the td back
 			if($("."+unhideClassName).hasClass('hidden')){
 				$("."+unhideClassName).toggleClass('hidden');
