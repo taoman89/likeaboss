@@ -41,7 +41,7 @@ var unlockSlots = function(availSlots, backGroundColor){
 		 }
 	}
 };
-/** WIP
+
 var showSlotsFullMod = function (availSlots, backGroundColor){
 	var avail = availSlots.split(",");
 	//changes the css of desired slots into desired colours
@@ -57,17 +57,16 @@ var showSlotsFullMod = function (availSlots, backGroundColor){
 		
 		var hiddenTD = $('#'+"row"+(parseInt(slotNumber/numberOfDays)+1)).children("."+columnNumber);
 		hiddenTD.remove();
-		alert(hiddenTD.html());
+		
 		
 		selected.attr('rowspan',2);
-		
-		
+
 		selected.css('background-color', backGroundColor);
 		
 	}
 	unlockSlots(availSlots, backGroundColor);
 };
-**/
+
 // function that locks all of the timetable cells
 var lockAll = function(){
 	var table = document.getElementById("table2");
@@ -80,7 +79,57 @@ var lockAll = function(){
 		 if(col.className.indexOf('mark')==-1){
 			 col.className = col.className + ' mark';
 		 }
+		 //changes the background to initial colour
 		 col.style.backgroundColor = initialColour;
+		 
+		 if(col.innerHTML.indexOf('full"') >= 0 ){
+			 col.rowSpan = 2;
+			 var hiddenTD = $('#'+"row"+(i)).children(".col"+(j-1));
+			 hiddenTD.remove();
+		 }
+		 
+		 //recitify the rowspan to 1 after the element is dropped innerHTML is to check if there is things inside the td
+		 if(col.rowSpan ==2 && col.innerHTML.length == 0 ){
+		
+			 col.rowSpan = 1;
+			 
+			 //adding back the td
+			 var colNum =  j-1;
+			 var rowNum = i;
+			 
+			 //creates the TD to be appended
+			 var td = $('<td></td>');
+			 td.toggleClass('mark');
+			 td.toggleClass('col'+colNum);
+			 
+			 
+			 // if the slot lies on friday
+			 if(colNum == numberOfDays -1){
+			 	$('#row'+ rowNum).append(td);
+			 }else{
+				colNum++;
+				//finding the td to append be
+				 var tdExist = $('#row'+ rowNum).find('.col'+colNum).length;
+				 
+				 if(tdExist == 1){
+					 $('#row'+ rowNum).find('.col'+colNum).before(td);
+					 
+				 }
+				 	 
+				 //alert("row:" + rowNum+"col:" + colNum + "tdexist:"+tdExist);
+				  
+				 //sometimes the next cell with that ID may be removed due to the fact that the timeslots are side by side
+				 while(tdExist == 0){
+					 
+					 colNum++;
+					 tdExist = $('#row'+ rowNum).find('.col'+colNum).length;
+					 if(tdExist == 1){
+						 $('#row'+ rowNum).find('.col'+colNum).before(td);
+					 }
+				 }
+			 }
+		 }
+		 
 	   }
 	}
 	
@@ -138,12 +187,12 @@ $(document).ready(function() {
 	$('.drag').mousedown(function(){
 		
 		slots = $(this).find('> .slots').html();	
-		//if($(this).find('> .full').html()==null){
+		if($(this).find('> .full').html()==null){
 			showSlots(slots, '#3BB9FF');
-		//}
-		/** WIPelse{
+		}
+		else{
 			showSlotsFullMod(slots, '#3BB9FF');
-		}**/
+		}
 		
 		
 		$(".trash").css('background-color', '#FF0000');
@@ -190,12 +239,13 @@ $(document).ready(function() {
 			$('#'+ clonedID).mousedown(function(){
 				//gets the span that contains the available slots of which the modules can be in
 				
-				slots = $(this).find('> .slots').html();
-				
-				//WIPif($(this).find('> .full').html()==null){
-				
+				slots = $(this).find('> .slots').html();	
+				if($(this).find('> .full').html()==null){
 					showSlots(slots, '#3BB9FF');
-				//}
+				}
+				else{
+					showSlotsFullMod(slots, '#3BB9FF');
+				}
 				
 				$(".trash").css('background-color', '#FF0000');
 				
