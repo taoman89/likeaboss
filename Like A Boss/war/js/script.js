@@ -68,7 +68,12 @@ var showSlotsFullMod = function (availSlots, backGroundColor){
 };
 
 // function that locks all of the timetable cells / also does checks to ensure that half mods and full mods are in the right places of the application
+// also updates the number of CU
 var lockAll = function(){
+	
+	$('#noOfCu').html('0');
+	var cuCount = 0;
+	
 	var table = document.getElementById("table2");
 	for (var i = 1, row; row = table.rows[i]; i++) {
 	   //iterate through rows
@@ -86,6 +91,13 @@ var lockAll = function(){
 			 col.rowSpan = 2;
 			 var hiddenTD = $('#'+"row"+(i)).children(".col"+(j-1));
 			 hiddenTD.remove();
+			 
+			 //adds cu Count
+			 cuCount++;
+		 }
+		 
+		 if(col.innerHTML.indexOf('half') >= 0 ){
+			 cuCount+= 0.5;
 		 }
 		 
 
@@ -133,6 +145,8 @@ var lockAll = function(){
 		 
 	   }
 	}
+	
+	$('#noOfCu').html(cuCount);
 	
 };
 //shows the examtimetable
