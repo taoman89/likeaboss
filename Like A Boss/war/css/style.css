@@ -7,6 +7,13 @@ html {overflow-y: scroll}
 		margin:0;
 		padding:0;
 	}
+	
+	#filter-none {
+	width: 140px;
+	}
+	#filter-core,#filter-boe,#filter-ge,#filter-grs {
+	width: 53px;
+	}
 	.right-wrapper.span2 {
 	float: left;
 	margin-left: 0px;
@@ -17,7 +24,7 @@ html {overflow-y: scroll}
 	background-color: white;
 	padding: 8px;
 	cursor: auto !important;
-	font-size: 13px !important;
+	font-size: 12px !important;
 	}
 	.item {
 	position: relative;
