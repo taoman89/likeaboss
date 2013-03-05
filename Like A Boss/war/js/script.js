@@ -71,8 +71,14 @@ var showSlotsFullMod = function (availSlots, backGroundColor){
 // also updates the number of CU
 var lockAll = function(){
 	
+	// resets the cu display on planner.html
 	$('#noOfCu').html('0');
 	var cuCount = 0;
+	
+	if(!$('#cu').hasClass('hidden')){
+    	$('#cu').toggleClass('hidden');
+    	$('#leaveSpace').toggleClass('hidden');
+    }
 	
 	var table = document.getElementById("table2");
 	for (var i = 1, row; row = table.rows[i]; i++) {
@@ -145,8 +151,14 @@ var lockAll = function(){
 		 
 	   }
 	}
+	if(cuCount >= 6.5){
+		$('#cu').toggleClass('hidden');
+		$('#leaveSpace').toggleClass('hidden');
+	}
 	
 	$('#noOfCu').html(cuCount);
+	
+	
 	
 };
 //shows the examtimetable
