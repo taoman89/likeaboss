@@ -6,7 +6,7 @@ ul#nav li {
     background: #000;
     
     color: #FFF;
-    text-align: center;
+    text-align: left;
     line-height: 30px;
     white-space: nowrap;
 }
@@ -19,7 +19,7 @@ ul#nav > li ul {
     display: none;
     position: absolute;
 }
-.and:hover >ul li ul {
+div#arc0:hover >ul li ul {
     display: block;
 }
 ul#nav > li ul li {
