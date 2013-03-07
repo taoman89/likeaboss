@@ -1,5 +1,5 @@
 
-ul#nav li {
+.sectionDetails li {
     
     display: block;
     
@@ -10,18 +10,14 @@ ul#nav li {
     line-height: 30px;
     white-space: nowrap;
 }
-ul#nav li:hover {
-    background: #FFF;
-    
-    color: #000;
-}
-ul#nav > li ul {
+
+.sectionDetails > li ul {
     display: none;
     position: absolute;
 }
-div#arc0:hover >ul li ul {
+
+.sectionDetails > li ul li {
     display: block;
 }
-ul#nav > li ul li {
-    display: block;
-}
+
+ 

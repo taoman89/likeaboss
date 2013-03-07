@@ -253,6 +253,8 @@ $(document).ready(function() {
 		}
 		
 		
+		
+		
 		$(".trash").css('background-color', '#FF0000');
 		
 	});
@@ -294,6 +296,20 @@ $(document).ready(function() {
 		rd.event.dropped = function () {
 			
 			var clonedID = rd.obj.id;
+			
+			//setting hover function
+			$('#'+ clonedID).hover(function(){
+				
+				$(this).find('> .sectionDetails').children().children().css('display','block');
+				
+			});
+			
+			$('#'+ clonedID).on('mouseleave',function(){
+		
+				$(this).find('> .sectionDetails').children().children().css('display','none');
+				
+			});
+			
 			$('#'+ clonedID).mousedown(function(){
 				//gets the span that contains the available slots of which the modules can be in
 				
@@ -305,6 +321,16 @@ $(document).ready(function() {
 					showSlotsFullMod(slots, '#3BB9FF');
 				}
 				
+				var details  = $(this).find('> .sectionDetails')
+				
+				if(!details.hasClass('hidden')){
+					details.toggleClass('hidden');
+				}
+				
+				
+				
+				lastSelectedDrag = clonedID;
+				
 				$(".trash").css('background-color', '#FF0000');
 				
 			});
@@ -312,6 +338,13 @@ $(document).ready(function() {
 			$('#'+ clonedID).mouseup(function(){
 
 				showSlots(slots, initialColour);
+				
+				var details  = $(this).find('> .sectionDetails')
+					
+				if(details != null && details.hasClass('hidden')){
+					details.toggleClass('hidden');
+				}
+				
 				$(".trash").css('background-color', '#6386BD');
 				lockAll();
 			});
@@ -333,6 +366,14 @@ $(document).ready(function() {
 			if(!$("."+originalID+'td').hasClass('hidden')){
 				$("."+originalID+'td').toggleClass('hidden');
 			}
+			
+			var details  = $('#'+ originalID).find('> .sectionDetails')
+			
+			if(details != null && details.hasClass('hidden')){
+				details.toggleClass('hidden');
+			}
+			
+			
 		}
 		
 		
@@ -355,6 +396,12 @@ $(document).ready(function() {
 			showSlots(slots, initialColour);
 			lockAll();
 			$(".trash").css('background-color', '#6386BD');
+			
+			var details  = $('#'+ lastSelectedDrag).find('> .sectionDetails')
+			
+			if(details != null && details.hasClass('hidden')){
+				details.toggleClass('hidden');
+			}
 		}
 	};
 	
