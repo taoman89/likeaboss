@@ -76,9 +76,11 @@ html {overflow-y: scroll}
 	margin-top: 5px;
 	float: left;
 	width: auto;
+	margin-left: 0px;
 	}
 	#left {
 	float: left;
+	margin: 0px;
 	}
 	.search{
 		margin-top: 5px !important;
