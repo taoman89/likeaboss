@@ -18,7 +18,9 @@ var showSlots = function (availSlots, backGroundColor){
 		
 		//changes the background colour of avail timeslots
 		var selected = $('#'+rowNumber).children("."+columnNumber);
-		selected.css('background-color', backGroundColor);
+		if(!(selected.html().indexOf('half') >= 0)){
+			selected.css('background-color', backGroundColor);
+		}
 		
 	}
 	unlockSlots(availSlots, backGroundColor);
@@ -55,13 +57,17 @@ var showSlotsFullMod = function (availSlots, backGroundColor){
 		//changes the background colour of avail timeslots
 		var selected = $('#'+rowNumber).children("."+columnNumber);
 		
-		var hiddenTD = $('#'+"row"+(parseInt(slotNumber/numberOfDays)+1)).children("."+columnNumber);
-		hiddenTD.remove();
+		if(!(selected.html().indexOf('full') >= 0)){
 		
-		
-		selected.attr('rowspan',2);
-
-		selected.css('background-color', backGroundColor);
+			var hiddenTD = $('#'+"row"+(parseInt(slotNumber/numberOfDays)+1)).children("."+columnNumber);
+			hiddenTD.remove();
+			
+			
+			
+			selected.attr('rowspan',2);
+	
+			selected.css('background-color', backGroundColor);
+		}
 		
 	}
 	unlockSlots(availSlots, backGroundColor);
