@@ -9,10 +9,10 @@ html {overflow-y: scroll}
 	}
 	
 	#filter-none {
-	width: 140px;
+	width: 110px;
 	}
 	#filter-core,#filter-boe,#filter-ge,#filter-grs {
-	width: 53px;
+	width: 38px;
 	}
 	.right-wrapper.span2 {
 	float: left;
