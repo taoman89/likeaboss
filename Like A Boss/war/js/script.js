@@ -114,7 +114,7 @@ var lockAll = function(){
 		 
 
 		 //recitify the rowspan to 1 after the element is dropped innerHTML is to check if there is things inside the td
-		 if(col.rowSpan ==2 &&( col.innerHTML.length == 0 || col.innerHTML.indexOf('half"') >= 0 )){
+		 if(col.rowSpan ==2 &&( col.childNodes.length == 1 || col.innerHTML.indexOf('half"') >= 0 )){
 		
 			 col.rowSpan = 1;
 			 
@@ -127,6 +127,10 @@ var lockAll = function(){
 			 td.toggleClass('mark');
 			 td.toggleClass('col'+colNum);
 			 
+			 
+			 // appends the CloseX
+			 var closeX = '<a class="closeX hidden">&#10006;</a>';
+			 td.append(closeX);
 			 
 			 // if the slot lies on friday
 			 if(colNum == numberOfDays -1){
@@ -190,7 +194,7 @@ var showExamTimeTable = function(){
 	   for (var j = 1, col; col = row.cells[j]; j++) {
 	     //iterate through columns
 	     //see if the td is blank
-		 if(col.innerHTML!= null && col.innerHTML!= ''){
+		 if(col.innerHTML!= null && col.innerHTML!= '' && col.childNodes.length > 1){
 			 var tdContent = col.innerHTML;
 			 
 			 var startIndex = tdContent.indexOf('class="code">');
@@ -213,6 +217,14 @@ var showExamTimeTable = function(){
 	
 };
 
+
+//shows the examtimetable
+var showX = function(){
+	
+	
+	
+};
+
 var insertSection = function(){
 	var table = document.getElementById("table2");
 	
@@ -223,8 +235,9 @@ var insertSection = function(){
 	   for (var j = 1, col; col = row.cells[j]; j++) {
 		   //iterate through columns
 		   //returns the slots of the the object
-		   if(col.innerHTML!= null && col.innerHTML!= ''){
-			   var slots = col.firstChild.firstChild.innerHTML.split(",");
+		   if(col != undefined && col.innerHTML!= '' && col.childNodes.length > 1){
+			   //comeback
+			   var slots = col.lastChild.firstChild.innerHTML.split(",");
 			   
 			   var curLocation = (i-1) * 5 + j -1;
 			   var section = 'G';
@@ -232,7 +245,7 @@ var insertSection = function(){
 				   if(curLocation == slots[k]){
 					   section+= (k+1);
 					   //gets the span with the class name of section
-					   var sectionSpan = col.firstChild.firstChild.nextSibling.nextSibling.nextSibling;
+					   var sectionSpan = col.lastChild.firstChild.nextSibling.nextSibling.nextSibling;
 					   //alert(sectionSpan.innerHTML);
 					   sectionSpan.innerHTML = section;
 				   }
