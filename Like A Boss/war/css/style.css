@@ -165,13 +165,21 @@ html {overflow-y: scroll}
 		-moz-border-radius: 3px; /* FF */
 	}
 	
+	.closeX {
+	cursor: pointer;
+	float: right;
+	}
 	
 	/* tables */
 	div#drag table {
 		background-color: #eee;
 		border-collapse: collapse;
+		
 	}
 
+	#table2 {
+	min-height: 567px;
+	}
 	
 	/* table cells */
 	div#drag td{
@@ -337,6 +345,7 @@ html {overflow-y: scroll}
 		font-size: 12px;
 		padding: 2px;
 	}
+	
 	
 	/* message cell (marked as forbidden) */
 	.mark {

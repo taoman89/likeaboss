@@ -75,6 +75,7 @@ var showSlotsFullMod = function (availSlots, backGroundColor){
 
 // function that locks all of the timetable cells / also does checks to ensure that half mods and full mods are in the right places of the application
 // also updates the number of CU
+
 var lockAll = function(){
 	
 	// resets the cu display on planner.html
@@ -128,9 +129,6 @@ var lockAll = function(){
 			 td.toggleClass('col'+colNum);
 			 
 			 
-			 // appends the CloseX
-			 var closeX = '<a class="closeX hidden">&#10006;</a>';
-			 td.append(closeX);
 			 
 			 // if the slot lies on friday
 			 if(colNum == numberOfDays -1){
@@ -184,7 +182,6 @@ var showExamTimeTable = function(){
 
 	 });
 	
-	
 	var table = document.getElementById("table2");
 	
 	//adding exam to exam table
@@ -218,13 +215,24 @@ var showExamTimeTable = function(){
 };
 
 
-//shows the examtimetable
-var showX = function(){
+//shows the X
+var showX = function(i,j){
 	
-	
+	var closeX = $('#row'+(i-1)).find('.col'+(j-1)).find('.closeX');
+	if(closeX.hasClass('hidden')){
+		closeX.toggleClass('hidden');
+	}
+		
 	
 };
-
+//shows the X
+var hideX = function(i,j){
+	var closeX = $('#row'+(i-1)).find('.col'+(j-1)).find('.closeX');
+	if(!closeX.hasClass('hidden')){
+		closeX.toggleClass('hidden');
+	}
+};
+//triggers the showX or hideX function also
 var insertSection = function(){
 	var table = document.getElementById("table2");
 	
@@ -235,8 +243,10 @@ var insertSection = function(){
 	   for (var j = 1, col; col = row.cells[j]; j++) {
 		   //iterate through columns
 		   //returns the slots of the the object
+		   hideX(i,j);
 		   if(col != undefined && col.innerHTML!= '' && col.childNodes.length > 1){
-			   //comeback
+			   
+			   showX(i,j);
 			   var slots = col.lastChild.firstChild.innerHTML.split(",");
 			   
 			   var curLocation = (i-1) * 5 + j -1;
@@ -259,6 +269,10 @@ var insertSection = function(){
 
 
 $(document).ready(function() {
+	
+	
+	
+	
 	initialColour = $('#row0').children(".col0").css('background-color');
 	
 	$('.drag').mousedown(function(){
@@ -422,6 +436,28 @@ $(document).ready(function() {
 				details.toggleClass('hidden');
 			}
 		}
+		
+		$('.closeX').click(function(){
+			var col = $(this).parent();
+			var deleteDiv = col.find('.drag');
+			
+			var id = deleteDiv.attr('id');
+			
+			rd.deleteObject(id);
+			
+			$(this).toggleClass('hidden');
+			
+			
+			//this only works if the ID of the original element is of 2 letters
+			var unhideClassName = id.substring(0,2)+"td";
+			
+			//shows the td back
+			if($("."+unhideClassName).hasClass('hidden')){
+				$("."+unhideClassName).toggleClass('hidden');
+			}
+			showExamTimeTable();
+			lockAll();
+		});
 	};
 	
 	
